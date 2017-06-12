@@ -67,8 +67,8 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
        // Train Info
         console.log(newTrain);
         console.log(newDestination);
-        console.log(newFirstTrain);
-        console.log(newFrequency);
+        console.log("FIRST TRAIN DEPARTED AT: " + newFirstTrain);
+        console.log("THE TRAIN ARRIVES EVERY " + newFrequency + " MINUTES");
   
 
         // Prettify the first train time 
