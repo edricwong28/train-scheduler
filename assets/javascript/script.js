@@ -1,5 +1,21 @@
 
 
+//Clock for HTML Page
+
+function updateClock() {
+  
+var clock = moment().format("h:mm:ss a");
+
+var c = $("<h4>");
+var c2 = c.append(clock);
+$("#clock").html(c2);
+
+};
+
+setInterval(updateClock, 1000);
+
+
+
 // 1. Initialize Firebase
  var config = {
     apiKey: "AIzaSyAHl8haNQGiCgXD23o920QBluWW7yNA9lI",
@@ -90,6 +106,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
         var nextArrival = moment().add(minutesAway, "minutes");
         var nextArrival2 = moment(nextArrival).format("hh:mm");
+
         console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
 
         // Add each train's data into the table
