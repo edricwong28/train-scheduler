@@ -3,10 +3,10 @@
 //Clock for HTML Page
 
 function updateClock() {
-  
+
 var clock = moment().format("h:mm:ss a");
 
-var c = $("<h4>");
+var c = $("<h2>");
 var c2 = c.append(clock);
 $("#clock").html(c2);
 
