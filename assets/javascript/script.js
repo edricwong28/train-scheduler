@@ -75,7 +75,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
         // var firstTrainPretty = moment.unix(newFirstTrain).format("HH:mm");
         // console.log("THIS SHOULD BE THE FIRST TRAIN TIME FORMAT IN hh:mm: " + firstTrainPretty)
  
-        var firstTrainConverted = moment(newFirstTrain, "hh:mm").subtract(1, "years");
+        var firstTrainConverted = moment(newFirstTrain, "hh:mm").subtract(1, "days");
         console.log(firstTrainConverted);;
       
 
@@ -88,7 +88,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
         var minutesAway = newFrequency - timeApart;
         console.log("MINUTES UNTIL TRAIN: " + minutesAway);
 
-        var nextArrival = moment().add(minutesAway, "hh:mm");
+        var nextArrival = moment().add(minutesAway, "minutes");
         var nextArrival2 = moment(nextArrival).format("hh:mm");
         console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
 
